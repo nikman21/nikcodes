@@ -3,7 +3,6 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import Logo from '../../public/assets/nikcodesLogo.png';
-import exp from 'constants';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,9 +20,19 @@ const Navbar = () => {
           {/* Nav Links - Desktop */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
-              <Link href="/projects" className="text-white hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium">Projects</Link>
-              <Link href="/blog" className="text-white hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium">Blog</Link>
-              <Link href="/contact" className="text-white hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium">Contact</Link>
+                <Link  href="/#about">
+                  <p className="text-white hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">About</p>
+                </Link>
+                <Link href="/#projects">
+                  <p className="text-white hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">Projects</p>
+                </Link>
+                <Link href="/#contact">
+                  <p className="text-white hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">Contact</p>
+                </Link>
+                <div className="rounded-md px-5 py-2 font-bold flex gap-1 bg-main-orange bg-sky-700 cursor-pointer">
+                 
+                  <Link className="text-white" href="/blog">Blog</Link>
+                </div>
             </div>
           </div>
 
@@ -39,10 +48,18 @@ const Navbar = () => {
           {/* Nav Links - Collapsible */}
           <div className={`${isOpen ? 'block' : 'hidden'} md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-2`}>
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <Link href="/about" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600">About Me</Link>
-              <Link href="/projects" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600">Projects</Link>
-              <Link href="/blog" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600">Blog</Link>
-              <Link href="/contact" className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-sky-600">Contact</Link>
+            <Link href="/#about">
+                  <p className="text-gray-700 hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">About</p>
+                </Link>
+                <Link href="/#projects">
+                  <p className="text-gray-700 hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">Projects</p>
+                </Link>
+                <Link href="/#contact">
+                  <p className="text-gray-700 hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">Contact</p>
+                </Link>
+                <Link href="/blog" className="rounded-md px-5 py-2 font-bold flex gap-1 bg-main-orange bg-sky-700 cursor-pointer">
+                  <p className='text-white'>Blog</p>
+                </Link>
             </div>
           </div>
         </div>

@@ -1,6 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import Me from '../../public/assets/me.jpeg';
+
 
 const Hero = () => {
   return (
@@ -13,12 +15,12 @@ const Hero = () => {
         
         {/* Adjusted title and subtitle to match example */}
         <h1 className="text-6xl font-bold text-white mb-4">Hi, I'm Nikolas Manuel</h1>
-        <p className="text-xl text-white mb-6">I'm a software engineer specializing in web development.</p>    
+        <p className="text-xl text-white mb-6">Software Engineer specializing in Web & App Development.</p>    
 
         {/* Adjusted button to match example */}
         <div className="flex space-x-4 mb-8">
-        <button className="text-white py-2 px-6 border-2 border-white rounded-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 hover:bg-white hover:text-blue-500">Contact Me</button>
-        <button className="text-white py-2 px-6 border-2 border-white rounded-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 hover:bg-white hover:text-blue-500">Resume</button>
+        <Link href="/#contact" className="text-white py-2 px-6 border-2 border-white rounded-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 hover:bg-white hover:text-blue-500">Contact Me</Link>
+        <a href="/SWE_Nikolas_Manuel_Resume.pdf" download className="text-white py-2 px-6 border-2 border-white rounded-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 hover:bg-white hover:text-blue-500">Resume</a>
         </div>
       </div>
     </section>

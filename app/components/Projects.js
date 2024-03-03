@@ -41,11 +41,10 @@ function Projects() {
           </div>
 
           {/* Additional Projects */}
-          {/* Project 3 */}
           <div className="project bg-white bg-opacity-95 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-bold mb-3">CodeCollab - Collaborative Coding Platform</h3>
+            <h3 className="text-xl font-bold mb-3">BookBuddy</h3>
             <p className="mb-4 text-gray-700">
-              Real-time collaborative code editor with live chat functionality, built with React and WebSocket for seamless team programming sessions.
+              An AI smart reading tracker that helps you keep track of your reading progress and are able to have discussion with an ai chatbot after each reading session. 
             </p>
             <div className="flex items-center justify-between text-sm">
               <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
@@ -59,15 +58,15 @@ function Projects() {
 
           {/* Project 4 */}
           <div className="project bg-white bg-opacity-95 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-bold mb-3">VisualVest - Investment Portfolio Visualizer</h3>
+            <h3 className="text-xl font-bold mb-3">Play4life</h3>
             <p className="mb-4 text-gray-700">
-              A Vue.js app that helps investors visualize their portfolios through interactive charts and graphs, integrating financial APIs for real-time data.
+              A full-stack website for a bounce house company with a custom booking system and user authentication, built with Nextjs and Express.js.
             </p>
             <div className="flex items-center justify-between text-sm">
               <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
                 <FaGithub /> GitHub
               </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
+              <a href="https://www.play4life.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
                 <FaExternalLinkAlt /> Live Demo
               </a>
             </div>

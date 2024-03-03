@@ -5,7 +5,7 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 export default function Home() {
   return (
-    <main className="">
+    <main className="scroll-smooth">
       <Hero />
       <About />
       <Project />
