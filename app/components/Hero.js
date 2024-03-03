@@ -21,10 +21,6 @@ const Hero = () => {
         <button className="text-white py-2 px-6 border-2 border-white rounded-lg transition-all duration-500 ease-in-out transform hover:-translate-y-1 hover:bg-white hover:text-blue-500">Resume</button>
         </div>
       </div>
-
-      {/* Water Wave Effect (at the bottom) enhanced with a more dynamic look */}
-      <div className="absolute bottom-0 left-0 right-0">
-      </div>
     </section>
   );
 };

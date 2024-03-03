@@ -18,7 +18,7 @@ function Projects() {
               <a href="https://github.com/nikman21/neuronote" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
                 <FaGithub /> GitHub
               </a>
-              <a href="https://neuronote.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
+              <a href="https://neuronote-frontend.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
                 <FaExternalLinkAlt /> Live Demo
               </a>
             </div>
