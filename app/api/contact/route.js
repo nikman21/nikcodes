@@ -7,8 +7,8 @@ const transporter = nodemailer.createTransport({
   SES: new aws.SES({
     apiVersion: '2010-12-01',
     region: 'us-west-1',
-    accessKeyId: process.env.NEXT_PUBLIC_AWS_ACCESS_KEY,
-    secretAccessKey: process.env.NEXT_PUBLIC_AWS_SECRET_KEY,
+    accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+    secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   }),
 });
 
