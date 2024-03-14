@@ -12,11 +12,14 @@ function About() {
           <div className="about-me">
             <h2 className="text-4xl font-semibold mb-4">About Me</h2>
             <p className="mb-4">
-              Inspired by the quest for innovative solutions, I merge creativity with technology to develop software that not only meets but exceeds expectations. My dedication to excellence is evident through my contributions to scalable web applications and user-centric designs.
-            </p>
-            <p className="mb-4">
-              Embracing the challenges of the digital world, I continuously refine my skills, ensuring my creations stand at the forefront of industry advancements.
-            </p>
+  Hello, my name is Nik Manuel. I got my degree in Informatics and am deeply passionate about all things tech and programming. I thrive on learning new things and keeping up with the latest trends in the tech world. Collaborating on projects and brainstorming ideas with others is what I enjoy the most!
+</p>
+<p className="mb-4">
+  Embracing the challenges of the digital world, I continuously refine my skills, ensuring my creations stand at the forefront of industry advancements. When I'm not buried in code, you'll find me by the river, taking a moment to clear my mind and recharge.
+</p>
+<p className="mb-4">
+  Fitness is a big part of my life, too. I used to wrestle in high school and have recently gotten into jiu-jitsu. It's been an exciting journey. I'm keen to connect with like-minded folks who are eager to make a difference. Let's team up on some projects and shape the future together!
+</p>
             <div className="flex items-center space-x-4 mt-4">
               <a href="https://www.linkedin.com/in/nikolas-manuel-dev/" target="_blank" rel="noopener noreferrer" className="social-link">
                 <FaLinkedinIn size={24} />

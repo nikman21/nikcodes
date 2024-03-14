@@ -13,7 +13,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 relative">
           <div className="flex items-center">
             <Link href="/">
-              <Image src={Logo} alt="Nikolas Manuel" width={80} height={80} />
+              {/* <Image src={Logo} alt="Nikolas Manuel" width={80} height={80} /> */}
+              <h1 className="text-2xl font-bold text-white">Nikcodes.</h1>
             </Link>
           </div>
 
@@ -29,7 +30,7 @@ const Navbar = () => {
                 <Link href="/#contact">
                   <p className="text-white hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">Contact</p>
                 </Link>
-                <div className="rounded-md px-5 py-2 font-bold flex gap-1 bg-main-orange bg-sky-700 cursor-pointer">
+                <div className="rounded-md px-5 py-2 font-bold flex gap-1 hover:bg-sky-600 cursor-pointer">
                  
                   <Link className="text-white" href="/blog">Blog</Link>
                 </div>
@@ -57,8 +58,8 @@ const Navbar = () => {
                 <Link href="/#contact">
                   <p className="text-gray-700 hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">Contact</p>
                 </Link>
-                <Link href="/blog" className="rounded-md px-5 py-2 font-bold flex gap-1 bg-main-orange bg-sky-700 cursor-pointer">
-                  <p className='text-white'>Blog</p>
+                <Link href="/blog" className="rounded-md px-5 py-2 font-bold flex gap-1 bg-main-orange hover:bg-sky-600 cursor-pointer">
+                  <p className='text-gray-700'>Blog</p>
                 </Link>
             </div>
           </div>

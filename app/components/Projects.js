@@ -10,12 +10,12 @@ function Projects() {
 
           {/* Project 1 */}
           <div className="project bg-white bg-opacity-95 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-bold mb-3">NeuroNote - Personal Productivity App</h3>
+            <h3 className="text-xl font-bold mb-3">NeuraNote - Personal Productivity App</h3>
             <p className="mb-4 text-gray-700">
               A Next.js application designed to enhance personal productivity through efficient data management and security. Implements JWT for secure authentication.
             </p>
             <div className="flex items-center justify-between text-sm">
-              <a href="https://github.com/nikman21/neuronote" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
+              <a href="https://github.com/nikman21/neuranote-frontend" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
                 <FaGithub /> GitHub
               </a>
               <a href="https://neuranote-frontend.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
@@ -30,14 +30,14 @@ function Projects() {
             <p className="mb-4 text-gray-700">
               Collaborative project building a full-stack therapy journaling app with React Native and Express.js, featuring therapist insights through a React dashboard.
             </p>
-            <div className="flex items-center justify-between text-sm">
+            {/* <div className="flex items-center justify-between text-sm">
               <a href="https://github.com/nikman21/empath" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
                 <FaGithub /> GitHub
               </a>
               <a href="https://empath.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
                 <FaExternalLinkAlt /> Live Demo
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Additional Projects */}
@@ -46,14 +46,14 @@ function Projects() {
             <p className="mb-4 text-gray-700">
               An AI smart reading tracker that helps you keep track of your reading progress and are able to have discussion with an ai chatbot after each reading session. 
             </p>
-            <div className="flex items-center justify-between text-sm">
+            {/* <div className="flex items-center justify-between text-sm">
               <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
                 <FaGithub /> GitHub
               </a>
               <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
                 <FaExternalLinkAlt /> Live Demo
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Project 4 */}
@@ -63,9 +63,9 @@ function Projects() {
               A full-stack website for a bounce house company with a custom booking system and user authentication, built with Nextjs and Express.js.
             </p>
             <div className="flex items-center justify-between text-sm">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
+              {/* <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
                 <FaGithub /> GitHub
-              </a>
+              </a> */}
               <a href="https://www.play4life.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
                 <FaExternalLinkAlt /> Live Demo
               </a>

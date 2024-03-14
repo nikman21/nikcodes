@@ -5,7 +5,7 @@ import { FaLinkedinIn, FaGithub } from 'react-icons/fa'; // Importing social ico
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-6">
+    <footer style={{ backgroundImage: 'linear-gradient(to right, #0061ff, #60efff)' }} className=" text-white py-6">
       <div className="container mx-auto px-4 text-center">
         <div className="flex justify-center mb-4">
           <a href="https://www.linkedin.com/in/nikolas-manuel-dev/" target="_blank" rel="noopener noreferrer" className="mx-2">
