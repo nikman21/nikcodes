@@ -1,6 +1,6 @@
 import Hero from "./components/Hero";
 import About from "./components/About";
-import Project from "./components/Projects";
+import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
     <main className="scroll-smooth">
       <Hero />
       <About />
-      <Project />
+      <Projects />
       <Contact />
       <Footer />
     </main>

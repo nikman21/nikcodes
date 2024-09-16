@@ -1,70 +1,73 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import Logo from '../../public/assets/nikcodesLogo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const isScrolled = window.scrollY > 10;
+      if (isScrolled !== scrolled) {
+        setScrolled(isScrolled);
+      }
+    };
+
+    document.addEventListener('scroll', handleScroll);
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, [scrolled]);
 
   return (
-    <nav className="sticky top-0 z-10" style={{background: 'linear-gradient(to right, #0061ff, #60efff)'}}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/70 backdrop-blur-lg' : 'bg-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 relative">
-          <div className="flex items-center">
-            <Link href="/">
-              {/* <Image src={Logo} alt="Nikolas Manuel" width={80} height={80} /> */}
-              <h1 className="text-2xl font-bold text-white">Nikcodes.</h1>
-            </Link>
+        <div className="flex items-center justify-between h-16">
+          <Link href="/" className="flex items-center">
+            <h1 className={`text-2xl font-bold ${scrolled ? 'text-gray-900' : 'text-white'} transition-colors duration-300`}>Nikcodes.</h1>
+          </Link>
+
+          <div className="hidden md:flex items-center space-x-1">
+            {['About', 'Projects', 'Contact'].map((item) => (
+              <Link key={item} href={`/#${item.toLowerCase()}`}>
+                <span className={`px-3 py-2 rounded-full text-sm font-medium ${scrolled ? 'text-gray-900 hover:bg-gray-100' : 'text-white hover:bg-white/10'} transition-all duration-300`}>
+                  {item}
+                </span>
+              </Link>
+            ))}
           </div>
 
-          {/* Nav Links - Desktop */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-                <Link  href="/#about">
-                  <p className="text-white hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">About</p>
-                </Link>
-                <Link href="/#projects">
-                  <p className="text-white hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">Projects</p>
-                </Link>
-                <Link href="/#contact">
-                  <p className="text-white hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">Contact</p>
-                </Link>
-                <div className="rounded-md px-5 py-2 font-bold flex gap-1 hover:bg-sky-600 cursor-pointer">
-                 
-                  <Link className="text-white" href="/blog">Blog</Link>
-                </div>
-            </div>
-          </div>
-
-          {/* Hamburger Menu */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="focus:outline-none">
-              <svg className={`h-6 w-6 ${isOpen ? 'text-sky-600' : 'text-white'} transition-transform`} viewBox="0 0 20 20" fill="currentColor">
-                <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className={`p-2 rounded-full ${scrolled ? 'text-gray-900 hover:bg-gray-100' : 'text-white hover:bg-white/10'} transition-all duration-300 focus:outline-none`}
+            >
+              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {isOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
           </div>
-
-          {/* Nav Links - Collapsible */}
-          <div className={`${isOpen ? 'block' : 'hidden'} md:hidden absolute top-full left-0 w-full bg-white shadow-lg py-2`}>
-            <div className="px-2 pt-2 pb-3 space-y-1">
-            <Link href="/#about">
-                  <p className="text-gray-700 hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">About</p>
-                </Link>
-                <Link href="/#projects">
-                  <p className="text-gray-700 hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">Projects</p>
-                </Link>
-                <Link href="/#contact">
-                  <p className="text-gray-700 hover:bg-sky-600 px-3 py-2 rounded-md text-md font-bold cursor-pointer">Contact</p>
-                </Link>
-                <Link href="/blog" className="rounded-md px-5 py-2 font-bold flex gap-1 bg-main-orange hover:bg-sky-600 cursor-pointer">
-                  <p className='text-gray-700'>Blog</p>
-                </Link>
-            </div>
-          </div>
         </div>
       </div>
+
+      {isOpen && (
+        <div className="md:hidden">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/70 backdrop-blur-lg">
+            {['About', 'Projects', 'Contact'].map((item) => (
+              <Link key={item} href={`/#${item.toLowerCase()}`}>
+                <span className="block px-3 py-2 rounded-md text-base font-medium text-gray-900 hover:bg-gray-100 transition-all duration-300">
+                  {item}
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      )}
     </nav>
   );
 };

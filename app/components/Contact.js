@@ -1,5 +1,6 @@
 'use client';
 import React, { useState } from 'react';
+import { motion } from 'framer-motion';
 
 function Contact() {
   const [loading, setLoading] = useState(false);
@@ -34,14 +35,12 @@ function Contact() {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-        
         }),
       });
-      //console.log(response.body);
 
       if (response.ok) {
         setMessage('Your message has been sent!');
-        setFormData({ name: '', email: '', message: '' }); // Clear form
+        setFormData({ name: '', email: '', message: '' });
       } else {
         const error = await response.json();
         setMessage(`Failed to send message: ${error.message}`);
@@ -54,17 +53,30 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white">
-      <div className="container mx-auto px-4 max-w-lg text-center">
-        <h2 className="text-3xl font-semibold mb-8 text-gray-800">Get in Touch</h2>
-        <form className="contact-form bg-gray-50 rounded-lg p-8 shadow" onSubmit={handleSubmit}>
+    <section id="contact" className="py-20 bg-gradient-to-b from-white to-gray-100">
+      <div className="container mx-auto px-4 max-w-xl">
+        <motion.h2 
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+          className="text-4xl font-bold mb-12 text-center text-gray-800"
+        >
+          Let's Connect
+        </motion.h2>
+        <motion.form 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="contact-form bg-white rounded-3xl p-8 shadow-lg"
+          onSubmit={handleSubmit}
+        >
           <div className="mb-6">
             <input
               type="text"
               name="name"
               placeholder="Your Name"
               required
-              className="w-full p-4 border border-gray-300 rounded-md"
+              className="w-full p-4 border-b-2 border-gray-300 focus:border-blue-500 transition-colors duration-300 outline-none text-lg"
               value={formData.name}
               onChange={handleChange}
             />
@@ -75,31 +87,41 @@ function Contact() {
               name="email"
               placeholder="Your Email"
               required
-              className="w-full p-4 border border-gray-300 rounded-md"
+              className="w-full p-4 border-b-2 border-gray-300 focus:border-blue-500 transition-colors duration-300 outline-none text-lg"
               value={formData.email}
               onChange={handleChange}
             />
           </div>
-          <div className="mb-6">
+          <div className="mb-8">
             <textarea
               name="message"
               rows="4"
               placeholder="Your Message"
               required
-              className="w-full p-4 border border-gray-300 rounded-md"
+              className="w-full p-4 border-b-2 border-gray-300 focus:border-blue-500 transition-colors duration-300 outline-none text-lg resize-none"
               value={formData.message}
               onChange={handleChange}
             ></textarea>
           </div>
-          <button
+          <motion.button
             type="submit"
             disabled={loading}
-            className="w-full p-4 bg-blue-500 text-white rounded-md hover:bg-blue-600 disabled:bg-blue-300"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="w-full p-4 bg-blue-500 text-white rounded-full text-lg font-semibold hover:bg-blue-600 disabled:bg-blue-300 transition-colors duration-300 shadow-md"
           >
             {loading ? 'Sending...' : 'Send Message'}
-          </button>
-          {message && <p className="mt-4">{message}</p>}
-        </form>
+          </motion.button>
+          {message && (
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              className="mt-4 text-center text-lg font-medium text-gray-700"
+            >
+              {message}
+            </motion.p>
+          )}
+        </motion.form>
       </div>
     </section>
   );

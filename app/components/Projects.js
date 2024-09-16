@@ -1,78 +1,136 @@
+"use client";
+
 import React from 'react';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa'; // Icons for GitHub and live project links
+import { ProjectShowcase } from './projectModals'; 
+import Play4life from '../../public/assets/p4l_sample.png'
+import NueraNote from '../../public/assets/neuranote.png'
+import bookbuddy from '../../public/assets/bookbuddy.png'
+import leaf from '../../public/assets/leaf_sample.png'
+
 
 function Projects() {
+  const projects = [
+    {
+      title: "NeuraNote",
+      description: "A comprehensive note-taking app with AI-powered features for enhanced productivity.",
+      src: NueraNote,
+      ctaText: "Visit Demo",
+      ctaLink: "https://neuranote-frontend.vercel.app",
+      content: () => (
+        <>
+          <p>
+            NeuraNote is a full-featured note-taking application that allows users to create and manage todos, journal entries, and notes. It includes a user-friendly dashboard that organizes content efficiently. This project was developed using CRUD operations to ensure comprehensive functionality for various note-taking needs.
+          </p>
+          <h4 className="font-semibold mt-4 mb-2">Tech Stack:</h4>
+          <ul className="list-disc list-inside">
+            <li>Next.js</li>
+            <li>Express</li>
+            <li>MongoDB</li>
+          </ul>
+          <h4 className="font-semibold mt-4 mb-2">Demo Video:</h4>
+          <div className="w-full max-w-[600px] mx-auto aspect-video">
+            <video controls className="w-full h-full mt-2 rounded-lg object-contain">
+              <source src='/assets/neuranote_vid.mp4' type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: "Leaf",
+      description: "A TikTok-inspired social media platform focusing on content rather than likes.",
+      src: leaf,
+      content: () => (
+        <>
+          <p>
+            Leaf is a social media platform that aims to shift the focus from likes to meaningful content. Similar to TikTok, Leaf allows users to upload and share short-form videos, but without the pressure of likes, fostering a more positive environment. It includes microservices architecture and an API gateway for efficient and scalable performance.
+          </p>
+          <h4 className="font-semibold mt-4 mb-2">Tech Stack:</h4>
+          <ul className="list-disc list-inside">
+            <li>Expo Router</li>
+            <li>Express</li>
+            <li>PostgreSQL</li>
+            <li>Prisma</li>
+            <li>Docker</li>
+          </ul>
+          <h4 className="font-semibold mt-4 mb-2">Demo Video:</h4>
+          <div className="w-full max-w-[600px] mx-auto aspect-video">
+            <video controls className="w-full h-full mt-2 rounded-lg object-contain">
+              <source src="/assets/leaf_vid.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: "BookBuddy",
+      description: "An AI-powered book discovery and reading management app with community features.",
+      src: bookbuddy,
+      content: () => (
+        <>
+          <p>
+            BookBuddy offers a seamless way to find books, track reading sessions, chat with AI about the books, and take notes. It integrates the Google Books API for book discovery and offers a personalized reading experience. Users can interact with a chatbot that discusses the book, facilitating engaging conversations and enhancing the reading journey.
+          </p>
+          <h4 className="font-semibold mt-4 mb-2">Tech Stack:</h4>
+          <ul className="list-disc list-inside">
+            <li>Expo Router</li>
+            <li>Express</li>
+            <li>PostgreSQL</li>
+            <li>Google Books API</li>
+          </ul>
+          <h4 className="font-semibold mt-4 mb-2">Demo Video:</h4>
+          <div className="w-full max-w-[600px] mx-auto aspect-video">
+            <video controls className="w-full h-full mt-2 rounded-lg object-contain">
+              <source src='/assets/bookbuddy_vid.mp4' type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </>
+      ),
+    },
+    {
+      title: "Play4Life",
+      description: "A website and booking dashboard for a local bounce house company.",
+      src: Play4life,
+      ctaText: "Visit Website",
+      ctaLink: "https://www.play4life.com",
+      content: () => (
+        <>
+          <p>
+            Play4Life is a platform I developed for a local bounce house company to facilitate online bookings. The site includes a user-friendly interface for customers to browse and book bounce houses, along with a comprehensive dashboard for managing bookings. The platform streamlines operations and enhances customer engagement.
+          </p>
+          <h4 className="font-semibold mt-4 mb-2">Tech Stack:</h4>
+          <ul className="list-disc list-inside">
+            <li>Next.js</li>
+            <li>Express</li>
+            <li>MySQL</li>
+          </ul>
+          <h4 className="font-semibold mt-4 mb-2">Key Features:</h4>
+          <ul className="list-disc list-inside">
+            <li>Online booking system</li>
+            <li>Comprehensive management dashboard</li>
+            <li>User-friendly interface</li>
+          </ul>
+          <h4 className="font-semibold mt-4 mb-2">Demo Video:</h4>
+          <div className="w-full max-w-[600px] mx-auto aspect-video">
+            <video controls className="w-full h-full mt-2 rounded-lg object-contain">
+              <source src='/assets/play4life_sample_vid.mp4' type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </>
+      ),
+    }
+  ];
+  
+
   return (
-    <section id="projects" style={{ backgroundImage: 'linear-gradient(to right, #0061ff, #60efff)' }} className="text-gray-800 py-20">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <h2 className="text-4xl font-semibold mb-10 text-center text-white">Highlighted Projects</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-          {/* Project 1 */}
-          <div className="project bg-white bg-opacity-95 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-bold mb-3">NeuraNote - Personal Productivity App</h3>
-            <p className="mb-4 text-gray-700">
-              A Next.js application designed to enhance personal productivity through efficient data management and security. Implements JWT for secure authentication.
-            </p>
-            <div className="flex items-center justify-between text-sm">
-              <a href="https://github.com/nikman21/neuranote-frontend" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
-                <FaGithub /> GitHub
-              </a>
-              <a href="https://neuranote-frontend.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
-                <FaExternalLinkAlt /> Live Demo
-              </a>
-            </div>
-          </div>
-
-          {/* Project 2 */}
-          <div className="project bg-white bg-opacity-95 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-bold mb-3">Empath - Therapy Journaling App</h3>
-            <p className="mb-4 text-gray-700">
-              Collaborative project building a full-stack therapy journaling app with React Native and Express.js, featuring therapist insights through a React dashboard.
-            </p>
-            {/* <div className="flex items-center justify-between text-sm">
-              <a href="https://github.com/nikman21/empath" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
-                <FaGithub /> GitHub
-              </a>
-              <a href="https://empath.app" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
-                <FaExternalLinkAlt /> Live Demo
-              </a>
-            </div> */}
-          </div>
-
-          {/* Additional Projects */}
-          <div className="project bg-white bg-opacity-95 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-bold mb-3">BookBuddy</h3>
-            <p className="mb-4 text-gray-700">
-              An AI smart reading tracker that helps you keep track of your reading progress and are able to have discussion with an ai chatbot after each reading session. 
-            </p>
-            {/* <div className="flex items-center justify-between text-sm">
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
-                <FaGithub /> GitHub
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
-                <FaExternalLinkAlt /> Live Demo
-              </a>
-            </div> */}
-          </div>
-
-          {/* Project 4 */}
-          <div className="project bg-white bg-opacity-95 rounded-lg p-6 shadow-lg">
-            <h3 className="text-xl font-bold mb-3">Play4life</h3>
-            <p className="mb-4 text-gray-700">
-              A full-stack website for a bounce house company with a custom booking system and user authentication, built with Nextjs and Express.js.
-            </p>
-            <div className="flex items-center justify-between text-sm">
-              {/* <a href="#" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
-                <FaGithub /> GitHub
-              </a> */}
-              <a href="https://www.play4life.com" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-blue-500">
-                <FaExternalLinkAlt /> Live Demo
-              </a>
-            </div>
-          </div>
-
-        </div>
+    <section id="projects" className="py-20 bg-gradient-to-r from-blue-600 to-blue-400 text-white">
+      <div className="container mx-auto px-4 max-w-6xl">
+        <h2 className="text-4xl font-bold mb-12 text-center">Innovative Creations</h2>
+        <ProjectShowcase projects={projects} />
       </div>
     </section>
   );
