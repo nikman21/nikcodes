@@ -101,7 +101,7 @@ function Projects() {
           <p>
             Play4Life is a platform I developed for a local bounce house company to facilitate online bookings. The site includes a user-friendly interface for customers to browse and book bounce houses, along with a comprehensive dashboard for managing bookings. The platform streamlines operations and enhances customer engagement.
           </p>
-          <h4 className="font-semibold mt-4 mb-2">Tech Stack:</h4>
+          <h4 className="font-semibold mt-2 mb-2">Tech Stack:</h4>
           <ul className="list-disc list-inside">
             <li>Next.js</li>
             <li>Express</li>
@@ -110,7 +110,7 @@ function Projects() {
           <h4 className="font-semibold mt-4 mb-2">Key Features:</h4>
           <ul className="list-disc list-inside">
             <li>Online booking system</li>
-            <li>Comprehensive management dashboard</li>
+            <li>Management dashboard</li>
             <li>User-friendly interface</li>
           </ul>
           <h4 className="font-semibold mt-4 mb-2">Demo Video:</h4>

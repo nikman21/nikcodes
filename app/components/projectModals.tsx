@@ -53,14 +53,16 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
       </AnimatePresence>
       <AnimatePresence>
         {active && typeof active === "object" ? (
-          <div className="fixed inset-0 grid place-items-center z-[100] p-4">
+          // Updated the modal wrapper to allow vertical scrolling on mobile devices
+          <div className="fixed inset-0 z-[100] p-4 flex items-center justify-center overflow-y-auto">
             <motion.button
               key={`button-${active.title}-${id}`}
               layout
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0, transition: { duration: 0.05 } }}
-              className="flex absolute top-6 right-6 items-center justify-center bg-blue-500 text-white rounded-full h-10 w-10 z-10"
+              // Adjusted positioning for mobile screens
+              className="flex absolute top-4 right-4 sm:top-6 sm:right-6 items-center justify-center bg-blue-500 text-white rounded-full h-10 w-10 z-10"
               onClick={() => setActive(null)}
             >
               <CloseIcon />
@@ -68,20 +70,23 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
             <motion.div
               layoutId={`card-${active.title}-${id}`}
               ref={ref}
-              className="w-full max-w-4xl h-auto max-h-[90vh] bg-white dark:bg-blue-900 rounded-3xl overflow-hidden shadow-2xl"
+              // Adjusted max-width and added overflow-y-auto for responsiveness
+              className="w-full max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl h-auto max-h-[90vh] bg-white dark:bg-blue-900 rounded-3xl overflow-y-auto shadow-2xl"
             >
-              <div className="p-8 overflow-y-auto">
+              {/* Reduced padding on smaller screens */}
+              <div className="p-4 sm:p-6 md:p-8">
                 <div className="flex flex-col h-full">
                   <div className="mb-6">
                     <motion.h3
                       layoutId={`title-${active.title}-${id}`}
-                      className="font-bold text-blue-600 dark:text-blue-300 text-3xl mb-3"
+                      // Adjusted font sizes for responsiveness
+                      className="font-bold text-blue-600 dark:text-blue-300 text-2xl sm:text-3xl mb-3"
                     >
                       {active.title}
                     </motion.h3>
                     <motion.p
                       layoutId={`description-${active.description}-${id}`}
-                      className="text-gray-700 dark:text-gray-300 text-lg"
+                      className="text-gray-700 dark:text-gray-300 text-base sm:text-lg"
                     >
                       {active.description}
                     </motion.p>
@@ -91,7 +96,8 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="text-gray-600 dark:text-gray-300 text-base flex-grow overflow-auto pr-4 mb-6"
+                    // Adjusted padding and margin for mobile screens
+                    className="text-gray-600 dark:text-gray-300 text-base flex-grow overflow-auto pr-2 sm:pr-4 mb-6"
                     style={{
                       scrollbarWidth: 'thin',
                       scrollbarColor: '#3B82F6 #E5E7EB',
@@ -109,7 +115,8 @@ export function ProjectShowcase({ projects }: ProjectShowcaseProps) {
                       exit={{ opacity: 0 }}
                       href={active.ctaLink}
                       target="_blank"
-                      className="px-8 py-3 text-center text-lg rounded-full font-bold bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 self-start"
+                      // Adjusted padding and font size for responsiveness
+                      className="px-6 sm:px-8 py-2 sm:py-3 text-center text-base sm:text-lg rounded-full font-bold bg-blue-500 text-white hover:bg-blue-600 transition-colors duration-300 self-start"
                     >
                       {active.ctaText}
                     </motion.a>
